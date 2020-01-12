@@ -8,4 +8,12 @@ export const GlobalStyle = createGlobalStyle`
     width: 100%;
     background: #eeeeee;
   }
+
+  .slick-next:before, .slick-prev:before {
+    color: #000 !important;
+  }
+
+  div {
+    outline: none;
+  }
 `;

@@ -47,3 +47,21 @@ export const CardCarousel = styled.div`
   position: relative;
   text-align: center;
 `;
+
+export const BoxSlider = styled.div`
+  width: 60%;
+`;
+
+export const BoxDetail = styled.div`
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+`;
+
+export const TitleList = styled.span`
+  padding: 1em 0 1em 0;
+  font-weight: bold;
+  font-family: 'Raleway', sans-serif;
+`;
