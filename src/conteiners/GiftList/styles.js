@@ -1,6 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Box, Grid } from '@material-ui/core';
+import {
+  Box,
+  Grid,
+  Typography,
+  CardContent,
+  Card,
+  Avatar,
+} from '@material-ui/core';
 
 export const BoxStyled = styled(Grid)`
   background: linear-gradient(
@@ -48,21 +55,54 @@ export const CardCarousel = styled.div`
   text-align: center;
 `;
 
-export const BoxSlider = styled.div`
-  margin-top: 2em;
-  width: 60%;
+export const BoxProducts = styled(Grid)`
+  margin-top: 2em !important;
+  overflow-y: auto;
+  max-height: 25em;
 `;
 
-export const BoxDetail = styled.div`
-  margin: 10px;
+export const CardContentStyled = styled(CardContent)`
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  min-height: 6.5em;
+  justify-content: space-between;
+`;
+
+export const NameProduct = styled(Typography)`
+  padding: 0 0 1em 0;
+  font-weight: bold !important;
+  font-size: 0.8rem !important;
+`;
+
+export const BackgroundBack = styled.div`
+  background-image: linear-gradient(
+      rgba(113, 137, 145, 0.6),
+      rgba(113, 137, 145, 0.8)
+    ),
+    url(${props => props.url});
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex: 1;
+  width: 100%;
+  min-height: 10em;
+  position: relative;
+  z-index: 1;
+  filter: blur(2px);
+`;
+
+export const CardDetail = styled(Card)`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  text-align: center;
+  align-items: center;
 `;
 
-export const TitleList = styled.span`
-  padding: 1em 0 1em 0;
-  font-weight: bold;
-  font-family: 'Raleway', sans-serif;
+export const AvatarStyled = styled(Avatar)`
+  margin-top: -111px;
+  z-index: 2;
+  border: #fff solid 7px;
+  width: 9em !important;
+  height: 9em !important;
 `;

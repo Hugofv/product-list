@@ -71,6 +71,7 @@ const Categories = () => {
     dispatch(GiftListAction.getCategories());
   }, []);
 
+  console.log(categories);
   return (
     <>
       <BoxStyled container justify="space-around" alignItems="center">
