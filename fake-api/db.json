@@ -6001,22 +6001,133 @@
       "image": "http://dummyimage.com/600x600.jpg/5fa2dd/ffffff"
     }
   ],
-  "giftList": {
-    "id": 1,
-    "name": "Lista de Casamento",
-    "products": [
-      {
-        "id": 3,
-        "price": 56.09,
-        "name": "Bread - Raisin Walnut Pull",
-        "image": "http://dummyimage.com/600x600.jpg/dddddd/000000"
-      },
-      {
-        "id": 4,
-        "price": 51.23,
-        "name": "Bar Mix - Pina Colada, 355 Ml",
-        "image": "http://dummyimage.com/600x600.jpg/5fa2dd/ffffff"
-      }
-    ]
-  }
+  "giftList": [
+    {
+      "id": 1,
+      "categoryId": 2,
+      "name": "Lista de Casamento",
+      "products": [
+        {
+          "id": 3,
+          "price": 56.09,
+          "name": "Bread - Raisin Walnut Pull",
+          "image": "http://dummyimage.com/600x600.jpg/dddddd/000000"
+        },
+        {
+          "id": 4,
+          "price": 51.23,
+          "name": "Bar Mix - Pina Colada, 355 Ml",
+          "image": "http://dummyimage.com/600x600.jpg/5fa2dd/ffffff"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "categoryId": 1,
+      "name": "Lista de Noivado",
+      "products": [
+        {
+          "id": 3,
+          "price": 56.09,
+          "name": "Bread - Raisin Walnut Pull",
+          "image": "http://dummyimage.com/600x600.jpg/dddddd/000000"
+        },
+        {
+          "id": 4,
+          "price": 51.23,
+          "name": "Bar Mix - Pina Colada, 355 Ml",
+          "image": "http://dummyimage.com/600x600.jpg/5fa2dd/ffffff"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "categoryId": 2,
+      "name": "Lista de Aniversário",
+      "products": [
+        {
+          "id": 3,
+          "price": 56.09,
+          "name": "Bread - Raisin Walnut Pull",
+          "image": "http://dummyimage.com/600x600.jpg/dddddd/000000"
+        },
+        {
+          "id": 4,
+          "price": 51.23,
+          "name": "Bar Mix - Pina Colada, 355 Ml",
+          "image": "http://dummyimage.com/600x600.jpg/5fa2dd/ffffff"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "categoryId": 6,
+      "name": "Lista de Aniversário",
+      "products": [
+        {
+          "id": 3,
+          "price": 56.09,
+          "name": "Bread - Raisin Walnut Pull",
+          "image": "http://dummyimage.com/600x600.jpg/dddddd/000000"
+        },
+        {
+          "id": 4,
+          "price": 51.23,
+          "name": "Bar Mix - Pina Colada, 355 Ml",
+          "image": "http://dummyimage.com/600x600.jpg/5fa2dd/ffffff"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "categoryId": 2,
+      "name": "Lista de Aniversário",
+      "products": [
+        {
+          "id": 3,
+          "price": 56.09,
+          "name": "Bread - Raisin Walnut Pull",
+          "image": "http://dummyimage.com/600x600.jpg/dddddd/000000"
+        },
+        {
+          "id": 4,
+          "price": 51.23,
+          "name": "Bar Mix - Pina Colada, 355 Ml",
+          "image": "http://dummyimage.com/600x600.jpg/5fa2dd/ffffff"
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Casamento",
+      "quantityList": 2
+    },
+    {
+      "id": 2,
+      "name": "Noivado",
+      "quantityList": 5
+    },
+    {
+      "id": 3,
+      "name": "Aniversário",
+      "quantityList": 2
+    },
+    {
+      "id": 4,
+      "name": "Chá de Panela",
+      "quantityList": 3
+    },
+    {
+      "id": 5,
+      "name": "Bodas",
+      "quantityList": 7
+    },
+    {
+      "id": 6,
+      "name": "Formatura",
+      "quantityList": 5
+    }
+  ]
 }
