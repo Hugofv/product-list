@@ -1,6 +1,5 @@
-import React from 'react';
 import styled from 'styled-components';
-import { Box, Grid } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 
 export const BoxStyled = styled(Grid)`
   background: linear-gradient(

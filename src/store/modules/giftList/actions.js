@@ -13,6 +13,19 @@ export const getGiftListById = id => dispatch => {
   });
 };
 
+export const saveGiftList = giftList => dispatch => {
+  dispatch({
+    type: '@giftList/SAVE_GIFT_LIST_REQUEST',
+  });
+
+  api.post('/giftList', giftList).then(() => {
+    dispatch({
+      type: '@giftList/SAVE_GIFT_LIST_SUCCESS',
+      response: giftList,
+    });
+  });
+};
+
 export const getGiftListByCategory = categoryId => dispatch => {
   dispatch({
     type: '@giftList/FETCH_GIFT_LIST_REQUEST',
@@ -26,7 +39,7 @@ export const getGiftListByCategory = categoryId => dispatch => {
   });
 };
 
-export const getCategories = filter => dispatch => {
+export const getCategories = () => dispatch => {
   dispatch({
     type: '@giftList/FETCH_GIFT_LIST_REQUEST',
   });

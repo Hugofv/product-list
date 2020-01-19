@@ -1,7 +1,8 @@
 # [Lista de Presente] API React
 
 Este repositório contém uma simples API para o desafio de front-end de Lista de presentes.
-Requisitos:
+
+## Requisitos
 
 - Node.js [10.16.0](https://nodejs.org/dist/v10.16.0)
 

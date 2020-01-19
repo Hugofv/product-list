@@ -1,13 +1,5 @@
-import React from 'react';
 import styled from 'styled-components';
-import {
-  Box,
-  Grid,
-  Typography,
-  CardContent,
-  Card,
-  Avatar,
-} from '@material-ui/core';
+import { Grid, Typography, CardContent, Card, Avatar } from '@material-ui/core';
 import { Cancel } from '@material-ui/icons';
 
 export const BoxStyled = styled(Grid)`
@@ -96,6 +88,7 @@ export const CardDetail = styled(Card)`
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  position: relative;
 `;
 
 export const AvatarStyled = styled(Avatar)`

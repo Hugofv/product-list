@@ -1,8 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import Typography from '@material-ui/core/Typography';
-import Slider from 'react-slick';
 import {
-  Grid,
   Button,
   Card,
   CardActionArea,
@@ -10,19 +8,14 @@ import {
   makeStyles,
   Container,
   TextField,
-  CardContent,
-  Avatar,
-  FormControl,
-  InputLabel,
   InputAdornment,
-  Input,
+  Dialog,
+  DialogTitle,
+  DialogActions,
+  DialogContent,
 } from '@material-ui/core';
-import Autocomplete from '@material-ui/lab/Autocomplete';
 import {
-  Circulo,
-  BoxStyled,
   BackgroundBack,
-  BoxProducts,
   NameProduct,
   CardContentStyled,
   AvatarStyled,
@@ -35,6 +28,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import _ from 'lodash';
 import { Search } from '@material-ui/icons';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import history from '../../services/history';
 
 const useStyles = makeStyles({
   card: {
@@ -46,10 +40,12 @@ const GiftList = props => {
   const classes = useStyles();
   const [products, setProducts] = useState([]);
   const [productsFiltered, setProductsFiltered] = useState([]);
+  const [open, setOpen] = useState(false);
+  const [nameList, setNameList] = useState('');
 
   const giftList = useSelector(state => state.giftList);
 
-  const { item } = giftList;
+  const { item, loading, success } = giftList;
 
   const dispatch = useDispatch();
 
@@ -59,6 +55,28 @@ const GiftList = props => {
       return i === index;
     });
     setProducts(list);
+  };
+
+  const saveList = () => {
+    const list = {
+      id: Math.floor(Math.random() * 1000),
+      categoryId: item.categoryId,
+      image: item.image,
+      name: nameList,
+      products,
+    };
+
+    if (nameList) {
+      dispatch(GiftListAction.saveGiftList(list));
+    }
+  };
+
+  const openModal = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
   };
 
   useEffect(() => {
@@ -72,6 +90,13 @@ const GiftList = props => {
   useEffect(() => {
     setProductsFiltered(products);
   }, [products]);
+
+  useEffect(() => {
+    if (!loading && success) {
+      history.push(`/gift-list/${item.id}`);
+      window.location.reload();
+    }
+  }, [loading, success]);
 
   const quantityProducts = useMemo(() => products && products.length, [
     products,
@@ -97,31 +122,16 @@ const GiftList = props => {
 
   return (
     <>
-      <BoxStyled container justify="space-around" alignItems="center">
-        <Grid item xs={4}>
-          <Circulo>1º</Circulo>
-          <div>
-            <Typography variant="h5">Tipo da Lista</Typography>
-            <Typography>Selecione sua lista de acordo com o evento</Typography>
-          </div>
-        </Grid>
-
-        <Grid item xs={4}>
-          <Circulo>2º</Circulo>
-          <div>
-            <Typography variant="h5">Customize</Typography>
-            <Typography>Personalize sua lista</Typography>
-          </div>
-        </Grid>
-      </BoxStyled>
-
       <Container style={{ background: '#fff' }}>
         <CardDetail>
           <BackgroundBack url={item.image} />
 
           <AvatarStyled alt="Remy Sharp" src={item.image} />
           <CardContentStyled>
-            <Button variant="contained">Quero esta lista!</Button>
+            <Button variant="contained" color="secondary" onClick={openModal}>
+              Quero esta lista!
+            </Button>
+
             <Typography variant="h5" color="textPrimary" component="p">
               {item.name}
             </Typography>
@@ -132,6 +142,34 @@ const GiftList = props => {
           </CardContentStyled>
         </CardDetail>
       </Container>
+
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        fullWidth
+        maxWidth="sm"
+        aria-labelledby="form-gift-list"
+      >
+        <DialogTitle id="form-gift-list">Nova Lista</DialogTitle>
+        <DialogContent>
+          <TextField
+            autoFocus
+            fullWidth
+            margin="dense"
+            label="Nome da Lista"
+            type="text"
+            onChange={event => setNameList(event.target.value)}
+          />
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose} variant="contained">
+            Cancelar
+          </Button>
+          <Button onClick={saveList} variant="contained" color="primary">
+            Salvar
+          </Button>
+        </DialogActions>
+      </Dialog>
 
       <Container style={{ background: '#fff', paddingTop: '2em' }}>
         <TextField
