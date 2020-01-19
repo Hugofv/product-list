@@ -8,6 +8,7 @@ import {
   Card,
   Avatar,
 } from '@material-ui/core';
+import { Cancel } from '@material-ui/icons';
 
 export const BoxStyled = styled(Grid)`
   background: linear-gradient(
@@ -57,8 +58,6 @@ export const CardCarousel = styled.div`
 
 export const BoxProducts = styled(Grid)`
   margin-top: 2em !important;
-  overflow-y: auto;
-  max-height: 25em;
 `;
 
 export const CardContentStyled = styled(CardContent)`
@@ -105,4 +104,25 @@ export const AvatarStyled = styled(Avatar)`
   border: #fff solid 7px;
   width: 9em !important;
   height: 9em !important;
+`;
+
+export const CancelIcon = styled(Cancel)`
+  padding: 0.2em;
+  color: #fff;
+  cursor: pointer;
+  visibility: hidden;
+`;
+
+export const BoxIconCancel = styled(Grid)`
+  > div {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    z-index: 2;
+  }
+  :hover {
+    > div > svg {
+      visibility: visible;
+    }
+  }
 `;
