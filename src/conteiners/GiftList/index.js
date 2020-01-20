@@ -29,6 +29,7 @@ import _ from 'lodash';
 import { Search } from '@material-ui/icons';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import history from '../../services/history';
+import ReactPaginate from 'react-paginate';
 
 const useStyles = makeStyles({
   card: {
@@ -221,45 +222,6 @@ const GiftList = props => {
             </CSSTransition>
           ))}
         </TransitionGroup>
-        {
-          // <TransitionGroup>
-          //   {(productsFiltered || []).map((card, index) => (
-          //     <CSSTransition
-          //       key={card.id}
-          //       timeout={500}
-          //       classNames="item-transition"
-          //     >
-          //       <Card className={classes.card}>
-          //         <BoxIconCancel container justify="flex-end">
-          //           <div>
-          //             <CancelIcon onClick={() => removeProduct(index)} />
-          //           </div>
-          //         </BoxIconCancel>
-          //         <CardActionArea>
-          //           <CardMedia
-          //             component="img"
-          //             alt="Contemplative Reptile"
-          //             height="140"
-          //             image={
-          //               card.image
-          //                 ? card.image
-          //                 : 'https://resultadosdigitais.com.br/blog/files/2016/12/publicar-listas-no-blog.jpg'
-          //             }
-          //             title="Contemplative Reptile"
-          //           />
-          //           <CardContentStyled>
-          //             <NameProduct variant="body1" component="h2">
-          //               {card.name}
-          //             </NameProduct>
-          //             <span>1 unidade</span>
-          //             <span>R$ {card.price.toLocaleString('pt-BR')}</span>
-          //           </CardContentStyled>
-          //         </CardActionArea>
-          //       </Card>
-          //     </CSSTransition>
-          //   ))}
-          // </TransitionGroup>
-        }
       </Container>
     </>
   );
