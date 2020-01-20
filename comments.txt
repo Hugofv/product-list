@@ -1,0 +1,10 @@
+  Utilizei a biblioteca ReactJS, por dominar a tecnologia para solucionar o desafio,
+primeiramente busquei desenvolver as interfaces do desafio que se assemelhasse com
+a identidade visual da Todo Cartões. Com os produtos fornecidos fiz uma API false para
+prover as informações para o frontend, me baseei no protótipo do desafio e fiz uma
+tela que o usuário por realizar um filtro dos produtos da lista selecionada atráves
+da interface de listagem de lista de presentes por categora.
+  Para a API false utilizei a lib "json-server" que cria uma API false em poucos segundos,
+Para o frontend utilizei a lib "Material-UI" que possui componentes prontos que ajudam no
+desenvolvimento das interfaces, para manter o estado da aplicação foi utilizado o "redux"
+e para a estilização foi utilizado a lib "styled-components" que utiliza css no javascript.
